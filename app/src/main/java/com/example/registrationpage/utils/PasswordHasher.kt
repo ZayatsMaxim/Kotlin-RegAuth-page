@@ -6,7 +6,6 @@ class PasswordHasher {
 
     fun hashPassword(password: String): String {
         val hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt())
-        println("Password $password has been hashed into $hashedPassword")
         return hashedPassword
     }
 
