@@ -1,13 +1,14 @@
 package com.example.registrationpage
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.example.registrationpage.database.DBHelper
 import com.example.registrationpage.user.User
-import com.example.registrationpage.utils.PasswordHasher
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,9 +17,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val userEmailAddress: EditText = findViewById(R.id.userEmailAddress)
-        val userLogin: EditText = findViewById(R.id.userLogin)
-        val userPassword: EditText = findViewById(R.id.userPassword)
-        val registerButton: Button = findViewById(R.id.registerButton)
+        val userLogin: EditText = findViewById(R.id.userAuthLogin)
+        val userPassword: EditText = findViewById(R.id.userAuthPassword)
+        val registerButton: Button = findViewById(R.id.authButton)
+        val linkToAuth: TextView = findViewById(R.id.linkToAuth)
 
         registerButton.setOnClickListener {
             val email = userEmailAddress.text.toString().trim()
@@ -38,6 +40,11 @@ class MainActivity : AppCompatActivity() {
                 userEmailAddress.text.clear()
                 userPassword.text.clear()
             }
+        }
+
+        linkToAuth.setOnClickListener {
+            val intent = Intent(this, AuthActivity::class.java)
+            startActivity(intent)
         }
     }
 }

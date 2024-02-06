@@ -10,8 +10,8 @@ class PasswordHasher {
         return hashedPassword
     }
 
-    fun checkPassword(password: String, passwordFromDB: String): Boolean {
-        return BCrypt.hashpw(password, BCrypt.gensalt()) == passwordFromDB
+    fun checkPassword(password: String, hashedPassword: String): Boolean {
+        return BCrypt.checkpw(password, hashedPassword)
     }
 
 }

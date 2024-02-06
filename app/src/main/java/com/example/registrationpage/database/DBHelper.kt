@@ -15,7 +15,7 @@ class DBHelper(private val context: Context, private val factory: SQLiteDatabase
     override fun onCreate(database: SQLiteDatabase?) {
         val query = "CREATE TABLE users (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "login TEXT," +
+                "login TEXT UNIQUE," +
                 "email TEXT," +
                 "pass TEXT)"
 
@@ -36,5 +36,17 @@ class DBHelper(private val context: Context, private val factory: SQLiteDatabase
         val database = this.writableDatabase
         database.insert("users", null, values)
         database.close()
+    }
+
+    fun authUser(login: String, password: String): Boolean {
+        val database = this.readableDatabase
+
+        val result = database.rawQuery("SELECT * FROM users WHERE login = '$login'", null)
+        if(result.moveToFirst()) {
+            val passwordFromDB = result.getString(result.getColumnIndexOrThrow("pass"))
+            return passwordHasher.checkPassword(password, passwordFromDB)
+        }
+
+        return false
     }
 }
