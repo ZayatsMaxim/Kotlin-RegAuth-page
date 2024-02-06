@@ -1,4 +1,4 @@
-package com.example.registrationpage.utils
+package com.example.eComLearningProject.utils
 
 import org.mindrot.jbcrypt.BCrypt
 
@@ -6,7 +6,6 @@ class PasswordHasher {
 
     fun hashPassword(password: String): String {
         val hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt())
-        println("Password $password has been hashed into $hashedPassword")
         return hashedPassword
     }
 

@@ -1,4 +1,4 @@
-package com.example.registrationpage
+package com.example.eComLearningProject.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,8 +7,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.example.registrationpage.database.DBHelper
-import com.example.registrationpage.user.User
+import com.example.eComLearningProject.R
+import com.example.eComLearningProject.database.DBHelper
+import com.example.eComLearningProject.user.User
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.example.registrationpage
+package com.example.eComLearningProject.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.example.registrationpage.database.DBHelper
+import com.example.eComLearningProject.R
+import com.example.eComLearningProject.database.DBHelper
 
 class AuthActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,9 +36,11 @@ class AuthActivity : AppCompatActivity() {
                 val isAuth = dbHelper.authUser(login, password)
 
                 if(isAuth) {
-                    Toast.makeText(this, "Welcome, $login !", Toast.LENGTH_LONG).show()
                     userLogin.text.clear()
                     userPassword.text.clear()
+                    Toast.makeText(this, "Welcome, $login !", Toast.LENGTH_LONG).show()
+                    val intent = Intent(this, ItemsActivity::class.java)
+                    startActivity(intent)
                 } else {
                     Toast.makeText(this, "Login or password is incorrect", Toast.LENGTH_SHORT).show()
                 }

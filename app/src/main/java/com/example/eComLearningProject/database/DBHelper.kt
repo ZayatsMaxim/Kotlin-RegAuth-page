@@ -1,11 +1,11 @@
-package com.example.registrationpage.database
+package com.example.eComLearningProject.database
 
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.registrationpage.user.User
-import com.example.registrationpage.utils.PasswordHasher
+import com.example.eComLearningProject.user.User
+import com.example.eComLearningProject.utils.PasswordHasher
 
 class DBHelper(private val context: Context, private val factory: SQLiteDatabase.CursorFactory?) :
     SQLiteOpenHelper(context, "appDB", factory, 1) {

@@ -1,4 +1,4 @@
-package com.example.registrationpage
+package com.example.eComLearningProject
 
 import org.junit.Test
 

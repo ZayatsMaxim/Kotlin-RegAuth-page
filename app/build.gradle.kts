@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.registrationpage"
+    namespace = "com.example.eComLearningProject"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.registrationpage"
+        applicationId = "com.example.eComLearningProject"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
