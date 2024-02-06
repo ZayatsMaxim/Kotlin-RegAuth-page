@@ -15,10 +15,10 @@ class ItemsActivity : AppCompatActivity() {
 
         val itemsList: RecyclerView = findViewById(R.id.itemsList)
         val items = arrayListOf(
-            Item(0, "sofa", "Sofa", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet, consectetur adipiscing elit",259.99),
-            Item(1, "lamp", "Lamp", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet, consectetur adipiscing elit",99.99),
-            Item(2, "bed", "Bed", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet, consectetur adipiscing elit",399.99),
-            Item(3, "table", "Coffee Table", "Lorem ipsum dolor sit amet", "Lorem ipsum dolor sit amet, consectetur adipiscing elit",129.99)
+            Item(0, "sofa", "Sofa", getString(R.string.item_desc_default), getString(R.string.item_text_default),259.99),
+            Item(1, "lamp", "Lamp", getString(R.string.item_desc_default), getString(R.string.item_text_default),99.99),
+            Item(2, "bed", "Bed", getString(R.string.item_desc_default), getString(R.string.item_text_default),399.99),
+            Item(3, "table", "Coffee Table", getString(R.string.item_desc_default), getString(R.string.item_text_default),129.99)
         )
 
         itemsList.layoutManager = LinearLayoutManager(this)

@@ -11,7 +11,7 @@
     <ImageView
         android:id="@+id/itemListImage"
         android:layout_width="match_parent"
-        android:layout_height="321dp"
+        android:layout_height="wrap_content"
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/bed" />
 
@@ -51,5 +51,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="#E78895"
-        android:text="Посмотреть" />
+        android:fontFamily="@font/inter"
+        android:text="View details" />
 </LinearLayout>
